@@ -6,7 +6,7 @@ package com.embedded.sorting;
  * @author rnang0
  * @date 2020/8/18
  **/
-public class HeapSort extends Sort{
+public class HeapSort<E extends Comparable<E>> extends AbstractSort<E> {
 
     private int heapSize;
 
@@ -29,6 +29,7 @@ public class HeapSort extends Sort{
 			// 对0位置进行siftDown（恢复堆的性质）
 			siftDown(0);
 		}
+		print();
 	}
 
 	/**
@@ -36,20 +37,20 @@ public class HeapSort extends Sort{
      * @param index
      */
     private void siftDown(int index) {
-        int element = array[index];
+        E element = array[index];
         int halfIndex = heapSize >> 1;
         // index要小于第一个叶子节点的索引
         while (index < halfIndex) {
             // 左子节点
             int childIndex = (index << 1) + 1;
-            int childElement = array[childIndex];
+            E childElement = array[childIndex];
 
             // 判定是否有右节点，且比较左节点值，选最大值
             int rightIndex = childIndex + 1;
-            if (rightIndex < heapSize && compare(array[rightIndex],childElement) > 0) {
+            if (rightIndex < heapSize && cmp(array[rightIndex],childElement) > 0) {
                 childElement = array[childIndex = rightIndex];
             }
-            if (compare(element,childElement) >= 0) {
+            if (cmp(element,childElement) >= 0) {
                 break;
             }
             array[index] = childElement;

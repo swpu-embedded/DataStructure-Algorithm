@@ -5,7 +5,7 @@ package com.embedded.sorting;
  * @author rnang0
  * @date 2020/8/18
  **/
-public class BubbleSort extends Sort{
+public class BubbleSort<E extends Comparable<E>> extends AbstractSort<E> {
 
     /**
      * 冒泡排序优化算法，稳定、原地的排序算法

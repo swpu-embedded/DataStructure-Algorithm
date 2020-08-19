@@ -5,7 +5,7 @@ package com.embedded.sorting;
  * @author rnang0
  * @date 2020/8/18
  **/
-public class SelectionSort extends Sort{
+public class SelectionSort<E extends Comparable<E>> extends AbstractSort<E> {
 
     /**
      * 选择排序算法，稳定、原地的排序算法
