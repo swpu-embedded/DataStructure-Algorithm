@@ -1,10 +1,11 @@
-package com.embedded.sorting;
+package com.embedded.sorting.cmpare;
 
 /**
+ * 基于比较的排序，平均时间复杂度最低O（nlogn）
  * @author rnang0
  * @date 2020/8/18
  **/
-public abstract class AbstractSort<E extends Comparable<E>> {
+public abstract class AbstractCompareSort<E extends Comparable<E>> {
     protected E[] array;
 
     private int cmpCount;

@@ -1,11 +1,11 @@
-package com.embedded.sorting;
+package com.embedded.sorting.cmpare;
 
 /**
  * 选择排序算法
  * @author rnang0
  * @date 2020/8/18
  **/
-public class SelectionSort<E extends Comparable<E>> extends AbstractSort<E> {
+public class SelectionSort<E extends Comparable<E>> extends AbstractCompareSort<E> {
 
     /**
      * 选择排序算法，稳定、原地的排序算法

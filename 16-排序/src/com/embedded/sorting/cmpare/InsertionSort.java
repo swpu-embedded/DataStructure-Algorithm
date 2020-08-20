@@ -1,11 +1,11 @@
-package com.embedded.sorting;
+package com.embedded.sorting.cmpare;
 
 /**
  * 插入排序优化算法
  * @author rnang0
  * @date 2020/8/19
  **/
-public class InsertionSort<E extends Comparable<E>> extends AbstractSort<E> {
+public class InsertionSort<E extends Comparable<E>> extends AbstractCompareSort<E> {
 
     /**
      * 插入排序，稳定的、原地的排序算法，时间复杂度与逆序对个数成正比，因为要找位置

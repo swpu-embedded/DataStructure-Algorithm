@@ -1,11 +1,11 @@
-package com.embedded.sorting;
+package com.embedded.sorting.cmpare;
 
 /**
  * 归并排序算法
  * @author rnang0
  * @date 2020/8/19
  **/
-public class MergeSort<E extends Comparable<E>> extends AbstractSort<E> {
+public class MergeSort<E extends Comparable<E>> extends AbstractCompareSort<E> {
 
     /**
      * 左边序列的数组
@@ -27,7 +27,7 @@ public class MergeSort<E extends Comparable<E>> extends AbstractSort<E> {
      * 对[begin,end)范围进行递归的归并排序
      * 归并排序总是平均分割子序列
      * 时间复杂度 = 2 * T(n / 2) + O（n） = O(nlogn)
-     * 空间复杂度 = O（n）
+     * 空间复杂度 = O（n + logn） = O（n）
      * @param begin
      * @param end
      */

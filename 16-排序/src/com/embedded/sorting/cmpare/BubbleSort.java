@@ -1,11 +1,11 @@
-package com.embedded.sorting;
+package com.embedded.sorting.cmpare;
 
 /**
  * 冒泡排序优化算法
  * @author rnang0
  * @date 2020/8/18
  **/
-public class BubbleSort<E extends Comparable<E>> extends AbstractSort<E> {
+public class BubbleSort<E extends Comparable<E>> extends AbstractCompareSort<E> {
 
     /**
      * 冒泡排序优化算法，稳定、原地的排序算法

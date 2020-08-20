@@ -1,4 +1,4 @@
-package com.embedded.sorting;
+package com.embedded.sorting.cmpare;
 
 
 /**
@@ -6,7 +6,7 @@ package com.embedded.sorting;
  * @author rnang0
  * @date 2020/8/18
  **/
-public class HeapSort<E extends Comparable<E>> extends AbstractSort<E> {
+public class HeapSort<E extends Comparable<E>> extends AbstractCompareSort<E> {
 
     private int heapSize;
 
