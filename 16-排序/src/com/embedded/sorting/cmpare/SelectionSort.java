@@ -8,7 +8,7 @@ package com.embedded.sorting.cmpare;
 public class SelectionSort<E extends Comparable<E>> extends AbstractCompareSort<E> {
 
     /**
-     * 选择排序算法，稳定、原地的排序算法
+     * 选择排序算法，不稳定、原地的排序算法
      * 交换次数少于冒泡（一轮才一次，选最大/小），但最好情况也是O（n^2）
      */
     @Override
