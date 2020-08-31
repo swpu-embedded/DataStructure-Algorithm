@@ -10,6 +10,39 @@ public class LengthOfLIS {
     private static int[] dp;
 
     /**
+     * 二分搜索优化最长上升（递增）子序列
+	 * 牌顶
+	 */
+	public static int lengthOfLISByBinarySearch(int[] nums) {
+		if (nums == null || nums.length == 0) {
+		    return 0;
+        }
+		// 牌堆的数量
+		int len = 0;
+		// 牌顶数组
+		int[] top = new int[nums.length];
+		// 遍历所有的牌
+		for (int num : nums) {
+		    // 二分搜索位置
+			int begin = 0;
+			int end = len;
+			while (begin < end) {
+				int mid = (begin + end) >> 1;
+				if (num <= top[mid]) {
+					end = mid;
+				} else {
+					begin = mid + 1;
+				}
+			}
+			// begin = end覆盖牌顶位置
+			top[begin] = num;
+			// 检查是否要新建一个牌堆
+			if (begin == len) len++;
+		}
+		return len;
+	}
+
+    /**
      * 最长上升（递增）子序列的长度
      * @param nums
      * @return

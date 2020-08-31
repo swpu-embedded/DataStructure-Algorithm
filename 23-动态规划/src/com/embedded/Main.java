@@ -18,6 +18,9 @@ public class Main {
                 new int[] {1, 3, 5, 9, 10},
                 new int[] {1, 4, 9, 10}));
         System.out.println(LengthOfLCSubstring.lcSubstring("ABCBA", "BABCA"));
+        System.out.println(Knapsack.maxValue(
+                new int[] {6, 3, 5, 4, 6},
+                new int[] {2, 2, 6, 5, 4}, 10));
 
     }
 }
