@@ -11,7 +11,7 @@ import java.util.LinkedList;
 public class _239_滑动窗口最大值 {
 
     /**
-     * 暴力改进版（适用于递增队列O（n））
+     * 暴力改进版（适用于递增数组O（n））
      * 打算不进行k遍，则找出最大值，然后往后走，依次找到最大值
      * 如果最值不在窗口，则再进行k遍遍历，找最值
      * @param nums
@@ -77,6 +77,7 @@ public class _239_滑动窗口最大值 {
 
         int[] maxes = new int[nums.length - k + 1];
         Deque<Integer> deque = new LinkedList<>();
+
         for (int i = 0; i < nums.length; i++) {
             // 删除队列中索引对应元素值小的
             while (!deque.isEmpty() && nums[deque.peekLast()] <= nums[i] ) {

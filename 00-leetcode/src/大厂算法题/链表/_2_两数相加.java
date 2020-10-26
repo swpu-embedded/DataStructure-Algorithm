@@ -43,6 +43,7 @@ public class _2_两数相加 {
             newTail.next = new ListNode(carry);
             newTail = newTail.next;
         }
+        newTail.next = null;
         return newHead.next;
     }
 }

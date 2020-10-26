@@ -1,7 +1,5 @@
 package 大厂算法题.栈_队列;
 
-import 大厂算法题.二叉树._654_最大二叉树;
-
 import java.util.Arrays;
 import java.util.Stack;
 
@@ -36,7 +34,7 @@ public class _654_最大二叉树变种题_父节点索引 {
             }
 
             while (!stack.isEmpty() && nums[i] > nums[stack.peek()]) {
-                rightIndexes[stack.peek()] = i;
+                rightIndexes[stack.pop()] = i;
             }
 
             stack.push(i);

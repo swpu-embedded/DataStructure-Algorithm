@@ -18,7 +18,6 @@ public class _75_颜色分类 {
         int head = 0;
         int tail = nums.length - 1;
         int cur = head;
-        int temp = 0;
         // cur等于tail时
         while (cur <= tail) {
             if (nums[cur] == 0) {
