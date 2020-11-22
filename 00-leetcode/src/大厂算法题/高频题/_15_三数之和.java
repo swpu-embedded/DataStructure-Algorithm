@@ -1,9 +1,6 @@
 package 大厂算法题.高频题;
 
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * https://leetcode-cn.com/problems/3sum/
@@ -12,23 +9,44 @@ import java.util.Map;
  */
 class _15_三数之和 {
     public List<List<Integer>> threeSum(int[] nums) {
-        Map<Integer,Integer> map = new HashMap<Integer, Integer>();
-        List<List<Integer>> resultList = new LinkedList<List<Integer>>();
-        List<Integer> list = new LinkedList<Integer>();
-        int length = nums.length;
-        for (int i = 0; i < length - 1; i++) {
-            map.put(nums[0],0);
-            for (int j = i + 1; j < length; j++) {
-                int complement = -nums[i] - nums[j];
-                if (map.containsKey(complement)) {
+        if (nums == null) {
+            return null;
+        }
+        List<List<Integer>> resultList = new ArrayList<>();
+        if (nums.length < 3) {
+            return resultList;
+        }
+        Arrays.sort(nums);
+
+        int lastIndex = nums.length - 3;
+        for (int i = 0; i <= lastIndex; i++) {
+            if (i > 0 && nums[i] == nums[i - 1]) {
+                continue;
+            }
+            int l = i + 1;
+            int r = nums.length - 1;
+            while (l < r) {
+                int sum = nums[l] + nums[r];
+                if (sum == -nums[i]) {
+                    List<Integer> list = new ArrayList<>();
                     list.add(nums[i]);
-                    list.add(nums[j]);
-                    list.add(complement);
+                    list.add(nums[l]);
+                    list.add(nums[r]);
                     resultList.add(list);
+                    // 如果同时相减，可以会有重复结果，则需要去重复
+                    // 例如：[-2,0,0,2,2]
+                    while (l < r && nums[l] == nums[l + 1]) l++;
+                    while (l < r && nums[r] == nums[r - 1]) r--;
+                    l++;
+                    r--;
+                } else if (sum < -nums[i]) {
+                    l++;
+                } else {
+                    r--;
                 }
-                map.put(nums[j],j);
+
             }
         }
-        throw new IllegalArgumentException("No three sum solution");
+        return resultList;
     }
 }
